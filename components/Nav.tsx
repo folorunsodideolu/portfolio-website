@@ -27,11 +27,11 @@ export function Nav() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-transparent z-20 fixed h-[40px]  w-full top-0">
+    <nav className="bg-transparent fixed backdrop-blur-xl z-[9999] w-full top-0">
       <div className="w-full flex flex-wrap items-center justify-between  px-4 sm:px-8 xl:px-[6.25rem] py-4">
         {/* <!-- Logo  --> */}
         <Link href={"/"}>
-          <h1 className="font-titan uppercase text-[#1B1B1B] text-[1.25rem]">
+          <h1 className="font-mono uppercase text-black mix-blend-difference text-[1.25rem]">
             Folorunso Dideolu
           </h1>
         </Link>
@@ -43,7 +43,7 @@ export function Nav() {
             w-[46px] 
             h-[46px] 
             rounded-full 
-            border-white 
+            border-black 
             border-[1.84px]  
             items-center 
             p-2  
@@ -52,9 +52,9 @@ export function Nav() {
             focus:outline-none "
         >
           {isMenuOpen ? (
-            <Image src={close} className="w-9 object-contain invert" alt="" />
+            <Image src={close} className="w-9 object-contain" alt="" />
           ) : (
-            <Image src={menu} className="w-9 object-contain invert" alt="" />
+            <Image src={menu} className="w-9 object-contain" alt="" />
           )}
         </button>
         <div className="hidden w-full md:block md:w-auto justify-end">
