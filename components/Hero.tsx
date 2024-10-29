@@ -3,16 +3,10 @@ import React from "react";
 
 export function Hero() {
   return (
-    <div className="pt-32 lg:pt-40  mb-[6.1875rem]">
+    <div className="py-32 lg:pt-40">
       <div className="px-4 lg:px-24">
-        {/* <div className="w-full h-[1px] bg-black"></div>
-        <div className="flex justify-between w-full text-xs py-2">
-          <div>Who We Are</div>
-          <div>Who We Are</div>
-          <div>Who We Are</div>
-        </div> */}
         <div className="mx-auto w-full text-center py-4">
-          <span className="uppercase text-[1.8rem] font-extrabold md:text-[3rem] lg:text-[7rem] lg:leading-[7.25rem] pt-2">
+          <span className="font-questa uppercase text-[1.5rem] font-extrabold md:text-[3rem] lg:text-[5rem] lg:leading-[7.25rem] pt-2">
             Welcome to
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#060c1c] via-[#c7472f] to-[#e99f36]">
               {` Folorunso Dideolu’s `}
@@ -27,7 +21,7 @@ export function Hero() {
         <Image
           src="/images/row-1-column-1.webp"
           alt="folo"
-          width={1000}
+          width={500}
           height={50}
           className=""
         />

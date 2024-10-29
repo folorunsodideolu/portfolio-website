@@ -54,7 +54,7 @@ export function Footer() {
   }, [footerRef]);
 
   return (
-    <div className="relative px-3 py-4 gradient text-white" ref={footerRef}>
+    <footer className="relative px-3 py-4 gradient text-white" ref={footerRef} id="contact">
       <div className="hidden lg:block mb-[10vh]">
         <div className="mx-1 uppercase font-semibold py-10 text-[11.5vmax] my-1 leading-none">
           Folorunso <br /> Dideolu
@@ -74,6 +74,6 @@ export function Footer() {
           a pastel <br /> artist in Nigeria
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

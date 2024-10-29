@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useCallback, useState } from "react";
+import { Link as Links } from "react-scroll";
 import Link from "next/link";
+
 import menu from "@/public/icons/menu-outline.svg";
 import close from "@/public/icons/close-outline.svg";
 import Image from "next/image";
@@ -15,11 +17,11 @@ export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems: NavItem[] = [
-    { label: "Home", path: "/" },
-    { label: "Projects", path: "/projects" },
-    { label: "Services", path: "/services" },
-    { label: "About Us", path: "/about" },
-    { label: "Contact Us", path: "/contact" },
+    { label: "Home", path: "home" },
+    { label: "About", path: "about" },
+    { label: "Projects", path: "projects" },
+    { label: "Artist", path: "artist" },
+    { label: "Contact Us", path: "contact" },
   ];
 
   const handleClick = useCallback(() => {
@@ -28,10 +30,10 @@ export function Nav() {
 
   return (
     <nav className="bg-transparent fixed backdrop-blur-xl z-[9999] w-full top-0">
-      <div className="w-full flex flex-wrap items-center justify-between  px-4 sm:px-8 xl:px-[6.25rem] py-4">
+      <div className="w-full flex flex-wrap items-center justify-between px-4 sm:px-8 xl:px-[6.25rem] py-4">
         {/* <!-- Logo  --> */}
         <Link href={"/"}>
-          <h1 className="font-mono uppercase text-black mix-blend-difference text-[1.25rem]">
+          <h1 className="font-questa uppercase text-black text-[1.25rem]">
             Folorunso Dideolu
           </h1>
         </Link>
@@ -48,13 +50,13 @@ export function Nav() {
             items-center 
             p-2  
             justify-center 
-            md:hidden 
+            lg:hidden 
             focus:outline-none "
         >
           {isMenuOpen ? (
-            <Image src={close} className="w-9 object-contain" alt="" />
+            <Image src={close} className="w-9 object-contain" alt="icon" />
           ) : (
-            <Image src={menu} className="w-9 object-contain" alt="" />
+            <Image src={menu} className="w-9 object-contain" alt="icon" />
           )}
         </button>
         <div className="hidden w-full md:block md:w-auto justify-end">
@@ -68,8 +70,7 @@ export function Nav() {
               md:p-0 
               mt-4 
               border 
-              gap-2
-              
+              gap-2     
               xl:gap-[3.75rem] 
               md:flex-row 
               md:space-x-8 
@@ -78,19 +79,26 @@ export function Nav() {
           >
             {/* Nav Desktop */}
             {React.Children.toArray(
-              navItems.map(({ label, path }) => (
-                <Link
-                  href={path}
+              navItems.map(({ label, path }, index) => (
+                <Links
+                  key={index}
+                  activeClass="active"
+                  smooth
+                  spy
+                  to={path}
                   className="
-                      md:block 
+                      lg:block 
                       hidden 
-                      text-[#1B1B1B]
+                      text-black
                       text-[1.25rem]
-                      font-roboto
                       font-semibold
                       cursor-pointer 
                       hover:font-bold 
                       hover:text-white 
+                      hover:px-4
+                      hover:py-1
+                      hover:bg-black
+                      hover:rounded-[20px]
                       focus:font-bold 
                       focus:text-white
                       transition
@@ -99,7 +107,7 @@ export function Nav() {
                       "
                 >
                   {label}
-                </Link>
+                </Links>
               ))
             )}
           </div>
@@ -111,9 +119,13 @@ export function Nav() {
         <div className="lg:hidden absolute left-0 top-0 my-auto h-screen w-[100%] bg-[#011341] -z-[1] overflow-hidden">
           <div className="px-[0.75rem] py-[10rem] text-center space-y-16">
             {React.Children.toArray(
-              navItems.map(({ label, path }) => (
-                <Link
-                  href={path}
+              navItems.map(({ label, path }, index) => (
+                <Links
+                  key={index}
+                  activeClass="active"
+                  smooth
+                  spy
+                  to={path}
                   className="block cursor-pointer"
                   onClick={handleClick}
                 >
@@ -125,8 +137,7 @@ export function Nav() {
                     focus:font-bold 
                     hover:text-[#FCFCFC] 
                     focus:text-[#FCFCFC]  
-                    hover:underline-offset-[6px] 
-                    font-roboto
+                    hover:underline-offset-[6px]
                     block 
                     px-3 
                     py-2  
@@ -136,7 +147,7 @@ export function Nav() {
                   >
                     {label}
                   </span>
-                </Link>
+                </Links>
               ))
             )}
           </div>

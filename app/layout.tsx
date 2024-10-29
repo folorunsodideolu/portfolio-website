@@ -1,14 +1,33 @@
+import { Footer } from "@/components/Footer";
+import { Nav } from "@/components/Nav";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Footer } from "@/components/Footer";
-import { Nav } from "@/components/Nav";
-import clsx from "clsx";
 
-const questaSans = localFont({
+const amble = localFont({
+  src: [
+    {
+      path: "./fonts/Amble-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Amble-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Amble-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+});
+
+const questa = localFont({
   src: "./fonts/2-Questa_Sans_Regular.otf",
-  variable: "--font-questa-sans",
-  weight: "100 900",
+  weight: "400",
+  style: "normal",
 });
 
 export const metadata: Metadata = {
@@ -22,12 +41,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${amble.className} ${questa.className}`}>
       <body
-        className={clsx(
-          questaSans.variable,
-          "min-h-screen overflow-x-hidden m-0 p-0 flex flex-col bg-white font-sans"
-        )}
+        className="min-h-screen overflow-x-hidden m-0 p-0 flex flex-col bg-white font-amble"
         suppressHydrationWarning={true}
       >
         <Nav />
