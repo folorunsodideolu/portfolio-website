@@ -1,5 +1,6 @@
 "use client";
 
+import { staticBlurDataUrl } from "@/utils/staticBlurUrl";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -18,6 +19,7 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
 const About = ({ slice }: AboutProps): JSX.Element => {
   const [lettersRef, setlettersRef] = useArrayRef();
   const triggerRef = useRef(null);
+  const getBlurSvg = staticBlurDataUrl();
 
   function useArrayRef<T>(): [MutableRefObject<T[]>, (ref: T | null) => void] {
     const lettersRef = useRef<T[]>([]);
@@ -76,6 +78,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image3}
               width={slice.primary.image3.dimensions?.width}
               height={slice.primary.image3.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
           <div className="w-[50%] p-1 md:p-2">
@@ -83,6 +87,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image1}
               width={slice.primary.image1.dimensions?.width}
               height={slice.primary.image1.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
           <div className="w-full p-1 md:p-2">
@@ -90,6 +96,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image8}
               width={slice.primary.image8.dimensions?.width}
               height={slice.primary.image8.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
         </div>
@@ -102,6 +110,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image7}
               width={slice.primary.image7.dimensions?.width}
               height={slice.primary.image7.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
           <div className="w-[50%] p-1 md:p-2">
@@ -109,6 +119,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image9}
               width={slice.primary.image9.dimensions?.width}
               height={slice.primary.image9.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
           <div className="w-[50%] p-1 md:p-2">
@@ -116,6 +128,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image2}
               width={slice.primary.image2.dimensions?.width}
               height={slice.primary.image2.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
         </div>
@@ -127,6 +141,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image4}
               width={slice.primary.image4.dimensions?.width}
               height={slice.primary.image4.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
           <div className="w-[50%] p-1 md:p-2">
@@ -134,6 +150,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image5}
               width={slice.primary.image5.dimensions?.width}
               height={slice.primary.image5.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
 
@@ -142,6 +160,8 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               field={slice.primary.image6}
               width={slice.primary.image6.dimensions?.width}
               height={slice.primary.image6.dimensions?.height}
+              placeholder="blur"
+              blurDataURL={getBlurSvg}
             />
           </div>
         </div>
