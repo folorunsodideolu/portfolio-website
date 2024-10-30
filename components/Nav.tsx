@@ -87,7 +87,7 @@ export function Nav() {
                   spy
                   to={path}
                   className="
-                      lg:block 
+                      lg:inline-flex 
                       hidden 
                       text-black
                       text-[1.25rem]
@@ -95,14 +95,14 @@ export function Nav() {
                       cursor-pointer 
                       hover:font-bold 
                       hover:text-white 
+                      
                       hover:px-4
                       hover:py-1
                       hover:bg-black
                       hover:rounded-[20px]
                       focus:font-bold 
                       focus:text-white
-                      transition
-                      duration-150
+                      transition-all duration-500
                       ease-in-out
                       "
                 >

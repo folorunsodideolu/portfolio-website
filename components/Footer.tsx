@@ -54,7 +54,11 @@ export function Footer() {
   }, [footerRef]);
 
   return (
-    <footer className="relative px-3 py-4 gradient text-white" ref={footerRef} id="contact">
+    <footer
+      className="relative px-3 py-4 gradient text-white"
+      ref={footerRef}
+      id="contact"
+    >
       <div className="hidden lg:block mb-[10vh]">
         <div className="mx-1 uppercase font-semibold py-10 text-[11.5vmax] my-1 leading-none">
           Folorunso <br /> Dideolu
@@ -62,8 +66,22 @@ export function Footer() {
       </div>
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between uppercase">
         <div className="capitalize">follow us</div>
-        <div className="text-4xl underline">instagram</div>
-        <div className="text-4xl underline">facebook</div>
+        <div className="text-4xl underline">
+          <a
+            href="https://www.instagram.com/folorunsodideolu/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            instagram
+          </a>
+        </div>
+        <div className="text-4xl underline">
+          <a
+            href="https://web.facebook.com/benjamin.joseph.313/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >facebook</a>
+        </div>
         <div className="text-4xl underline">tiktok</div>
         <div className="text-4xl underline">x</div>
       </div>
