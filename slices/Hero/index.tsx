@@ -25,7 +25,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div className="px-4 lg:px-24">
         <div className="mx-auto w-full text-center py-4 line">
-          <span className="font-questa uppercase text-[1.5rem] font-extrabold md:text-[3rem] lg:text-[5rem] lg:leading-[7.25rem] pt-2">
+          <span className="font-amble uppercase text-[1.5rem] font-extrabold md:text-[3rem] lg:text-[5rem] lg:leading-[7.25rem] pt-2">
             {slice.primary.text_one}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#060c1c] via-[#c7472f] to-[#e99f36]">
               {` ${slice.primary.text_two} `}

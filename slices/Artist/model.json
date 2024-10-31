@@ -1,0 +1,62 @@
+{
+  "id": "artist",
+  "type": "SharedSlice",
+  "name": "Artist",
+  "description": "Artist",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "section_title": {
+          "type": "Text",
+          "config": {
+            "label": "section title",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "text1": {
+          "type": "Text",
+          "config": {
+            "label": "text1",
+            "placeholder": ""
+          }
+        },
+        "text2": {
+          "type": "Text",
+          "config": {
+            "label": "text2",
+            "placeholder": ""
+          }
+        },
+        "text3": {
+          "type": "Text",
+          "config": {
+            "label": "text3",
+            "placeholder": ""
+          }
+        },
+        "artistimage": {
+          "type": "Image",
+          "config": {
+            "label": "artistImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

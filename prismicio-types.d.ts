@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = ProjectsSlice | AboutSlice | HeroSlice;
+type HomeDocumentDataSlicesSlice =
+  | ArtistSlice
+  | ProjectsSlice
+  | AboutSlice
+  | HeroSlice;
 
 /**
  * Content for Home documents
@@ -208,6 +212,98 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Primary content in *Artist → Default → Primary*
+ */
+export interface ArtistSliceDefaultPrimary {
+  /**
+   * section title field in *Artist → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: artist.default.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * title field in *Artist → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: artist.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * text1 field in *Artist → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: artist.default.primary.text1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text1: prismic.KeyTextField;
+
+  /**
+   * text2 field in *Artist → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: artist.default.primary.text2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text2: prismic.KeyTextField;
+
+  /**
+   * text3 field in *Artist → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: artist.default.primary.text3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text3: prismic.KeyTextField;
+
+  /**
+   * artistImage field in *Artist → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: artist.default.primary.artistimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  artistimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Artist Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArtistSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArtistSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Artist*
+ */
+type ArtistSliceVariation = ArtistSliceDefault;
+
+/**
+ * Artist Shared Slice
+ *
+ * - **API ID**: `artist`
+ * - **Description**: Artist
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArtistSlice = prismic.SharedSlice<"artist", ArtistSliceVariation>;
 
 /**
  * Item in *Hero → Default → Primary → images*
@@ -415,6 +511,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      ArtistSlice,
+      ArtistSliceDefaultPrimary,
+      ArtistSliceVariation,
+      ArtistSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryImagesItem,
       HeroSliceDefaultPrimary,

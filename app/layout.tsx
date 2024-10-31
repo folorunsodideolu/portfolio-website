@@ -22,12 +22,14 @@ const amble = localFont({
       style: "normal",
     },
   ],
+  variable: "--font-amble",
 });
 
 const questa = localFont({
   src: "./fonts/2-Questa_Sans_Regular.otf",
   weight: "400",
   style: "normal",
+  variable: "--font-questa",
 });
 
 export const metadata: Metadata = {
@@ -41,9 +43,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${amble.className} ${questa.className}`}>
+    <html
+      lang="en"
+      className={`font-questa ${questa.variable} font-amble ${amble.variable}`}
+    >
       <body
-        className="min-h-screen overflow-x-hidden m-0 p-0 flex flex-col bg-white font-amble"
+        className="min-h-screen overflow-x-hidden m-0 p-0 flex flex-col bg-white"
         suppressHydrationWarning={true}
       >
         <Nav />

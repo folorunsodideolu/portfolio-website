@@ -67,6 +67,9 @@ export function Footer() {
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between uppercase">
         <div className="capitalize">follow us</div>
         <div className="text-4xl underline">
+          <a href="mailto:folorunsodideolu@gmail.com">email</a>
+        </div>
+        <div className="text-4xl underline">
           <a
             href="https://www.instagram.com/folorunsodideolu/"
             target="_blank"
@@ -80,10 +83,28 @@ export function Footer() {
             href="https://web.facebook.com/benjamin.joseph.313/"
             target="_blank"
             rel="noreferrer noopener"
-          >facebook</a>
+          >
+            facebook
+          </a>
         </div>
-        <div className="text-4xl underline">tiktok</div>
-        <div className="text-4xl underline">x</div>
+        <div className="text-4xl underline">
+          <a
+            href="https://www.tiktok.com/@folorunsodideolu"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            tiktok
+          </a>
+        </div>
+        <div className="text-4xl underline">
+          <a
+            href="https://www.x.com/@folorunsodideolu"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            x
+          </a>
+        </div>
       </div>
 
       <div className="flex flex-col lg:flex-row lg:mt-20 items-start lg:items-end justify-between">

@@ -21,7 +21,7 @@ export function Nav() {
     { label: "About", path: "about" },
     { label: "Projects", path: "projects" },
     { label: "Artist", path: "artist" },
-    { label: "Contact Us", path: "contact" },
+    { label: "Contact", path: "contact" },
   ];
 
   const handleClick = useCallback(() => {
@@ -33,7 +33,7 @@ export function Nav() {
       <div className="w-full flex flex-wrap items-center justify-between px-4 sm:px-8 xl:px-[6.25rem] py-4">
         {/* <!-- Logo  --> */}
         <Link href={"/"}>
-          <h1 className="font-questa uppercase text-black text-[1.25rem]">
+          <h1 className="font-amble font-extrabold uppercase text-black text-[1.25rem] mix-blend-soft-light">
             Folorunso Dideolu
           </h1>
         </Link>
@@ -59,7 +59,7 @@ export function Nav() {
             <Image src={menu} className="w-9 object-contain" alt="icon" />
           )}
         </button>
-        <div className="hidden w-full md:block md:w-auto justify-end">
+        <div className="hidden w-full lg:block md:w-auto justify-end">
           <div
             className="
               font-medium 
@@ -87,6 +87,8 @@ export function Nav() {
                   spy
                   to={path}
                   className="
+                      h-[40px]
+                      w-[100px]
                       lg:inline-flex 
                       hidden 
                       text-black
@@ -94,8 +96,7 @@ export function Nav() {
                       font-semibold
                       cursor-pointer 
                       hover:font-bold 
-                      hover:text-white 
-                      
+                      hover:text-white  
                       hover:px-4
                       hover:py-1
                       hover:bg-black

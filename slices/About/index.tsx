@@ -55,7 +55,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
       className="px-4 lg:px-24 pb-32"
       id="about"
     >
-      <div className="flex justify-center items-center text-[1rem] md:text-[1.5rem] font-bold pb-4 font-questa">
+      <div className="flex justify-center items-center text-[1rem] md:text-[1.5rem] font-bold pb-4 font-amble">
         {slice.primary.heading}
       </div>
       <div ref={triggerRef} className="md:text-center pb-8">

@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "artist": {
+              "type": "SharedSlice"
+            },
             "projects": {
               "type": "SharedSlice"
             },
