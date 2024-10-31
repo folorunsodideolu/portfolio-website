@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   description: "Pastel artist in Nigeria",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{

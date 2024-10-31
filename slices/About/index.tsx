@@ -1,12 +1,9 @@
 "use client";
 
 import { staticBlurDataUrl } from "@/utils/staticBlurUrl";
-import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
-import gsap from "gsap";
-import { MutableRefObject, useRef } from "react";
 
 /**
  * Props for `About`.
@@ -17,36 +14,33 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
  * Component for "About" Slices.
  */
 const About = ({ slice }: AboutProps): JSX.Element => {
-  const [lettersRef, setlettersRef] = useArrayRef();
-  const triggerRef = useRef(null);
+  // const [lettersRef, setlettersRef] = useArrayRef();
+  // const triggerRef = useRef(null);
   const getBlurSvg = staticBlurDataUrl();
 
-  function useArrayRef<T>(): [MutableRefObject<T[]>, (ref: T | null) => void] {
-    const lettersRef = useRef<T[]>([]);
-    const setRef = (ref: T | null) => {
-      if (ref && !lettersRef.current.includes(ref)) {
-        lettersRef.current.push(ref);
-      }
-    };
-    return [lettersRef, setRef];
-  }
+  // function useArrayRef<T>(): [MutableRefObject<T[]>, (ref: T | null) => void] {
+  //   const lettersRef = useRef<T[]>([]);
+  //   const setRef = (ref: T | null) => {
+  //     if (ref && !lettersRef.current.includes(ref)) {
+  //       lettersRef.current.push(ref);
+  //     }
+  //   };
+  //   return [lettersRef, setRef];
+  // }
 
-  const text =
-    "My expertise lies in creating hyper-realistic artwork using pastels, where I focus on capturing intricate details, lifelike textures, and vibrant colors to bring my subjects to life.";
-
-  useGSAP(() => {
-    gsap.to(lettersRef.current, {
-      scrollTrigger: {
-        trigger: triggerRef.current,
-        scrub: true,
-        start: "top center",
-        end: "bottom top",
-      },
-      color: "#202020",
-      duration: 5,
-      stagger: 1,
-    });
-  }, {});
+  // useGSAP(() => {
+  //   gsap.to(lettersRef.current, {
+  //     scrollTrigger: {
+  //       trigger: triggerRef.current,
+  //       scrub: true,
+  //       start: "top center",
+  //       end: "bottom top",
+  //     },
+  //     color: "#202020",
+  //     duration: 5,
+  //     stagger: 1,
+  //   });
+  // }, {});
 
   return (
     <section
@@ -58,16 +52,10 @@ const About = ({ slice }: AboutProps): JSX.Element => {
       <div className="flex justify-center items-center text-[1rem] md:text-[1.5rem] font-bold pb-4 font-amble">
         {slice.primary.heading}
       </div>
-      <div ref={triggerRef} className="md:text-center pb-8">
-        {text.split("").map((letter, index) => (
-          <span
-            key={index}
-            ref={setlettersRef}
-            className="about-first-text break-words text-[1.2rem] md:text-[2.5rem] first-letter:text-7xl"
-          >
-            {letter}
-          </span>
-        ))}
+      <div className="md:text-center pb-8">
+        <span className="text-black break-words text-[1.2rem] md:text-[2.5rem] first-letter:text-7xl">
+          {slice.primary.subtitle}
+        </span>
       </div>
 
       <div className="-m-1 flex flex-wrap md:-m-2">
