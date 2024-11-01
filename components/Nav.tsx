@@ -33,7 +33,7 @@ export function Nav() {
       <div className="w-full flex flex-wrap items-center justify-between px-4 sm:px-8 xl:px-[6.25rem] py-4">
         {/* <!-- Logo  --> */}
         <Link href={"/"}>
-          <h1 className="font-amble font-extrabold uppercase text-black text-[1.25rem] mix-blend-soft-light">
+          <h1 className="font-amble font-extrabold uppercase text-[1.25rem]">
             Folorunso Dideolu
           </h1>
         </Link>
@@ -45,7 +45,7 @@ export function Nav() {
             w-[46px] 
             h-[46px] 
             rounded-full 
-            border-black 
+            border-white 
             border-[1.84px]  
             items-center 
             p-2  
@@ -90,19 +90,19 @@ export function Nav() {
                       h-[40px]
                       w-[100px]
                       lg:inline-flex 
-                      hidden 
-                      text-black
+                      text-white
+                      hidden
                       text-[1.25rem]
                       font-semibold
                       cursor-pointer 
                       hover:font-bold 
-                      hover:text-white  
+                      hover:text-black  
                       hover:px-4
                       hover:py-1
-                      hover:bg-black
+                      hover:bg-white
                       hover:rounded-[20px]
                       focus:font-bold 
-                      focus:text-white
+                      focus:text-black
                       transition-all duration-500
                       ease-in-out
                       "

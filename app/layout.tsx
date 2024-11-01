@@ -49,7 +49,7 @@ export default function RootLayout({
       className={`font-questa ${questa.variable} font-amble ${amble.variable}`}
     >
       <body
-        className="min-h-screen overflow-x-hidden m-0 p-0 flex flex-col bg-white"
+        className="min-h-screen overflow-x-hidden m-0 p-0 flex flex-col bg-black text-white"
         suppressHydrationWarning={true}
       >
         <Nav />

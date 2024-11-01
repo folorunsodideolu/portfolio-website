@@ -23,7 +23,7 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
       id="projects"
     >
       <div className="works_wrapper">
-        <div className="inline-flex pt-4 items-baseline gap-4 lg:gap-x-[3.2rem] lg:w-[70%] w-full border-b-2 border-white border-solid">
+        <div className="inline-flex pt-4 items-baseline gap-4 lg:gap-x-[3.2rem] lg:w-[35%] w-full border-b-2 border-white border-solid">
           <h1 className="text-[2rem] lg:text-[7rem]  uppercase font-amble">
             {slice.primary.heading}
           </h1>
@@ -55,9 +55,9 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
                     </h3>
                   </div>
                   <div className="works_grid_item_info">
-                    <h2 className="text-[2rem] lg:text-[9rem] uppercase font-amble">
+                    {/* <h2 className="text-[2rem] lg:text-[9rem] uppercase font-amble">
                       {`( ${index + 1} )`}
-                    </h2>
+                    </h2> */}
                     <span className="text-[1.5rem] lg:text-[2.4rem] capitalize text-justify">
                       {item.description}
                     </span>

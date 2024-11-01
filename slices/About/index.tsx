@@ -53,7 +53,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
         {slice.primary.heading}
       </div>
       <div className="md:text-center pb-8">
-        <span className="text-black break-words text-[1.2rem] md:text-[2.5rem] first-letter:text-7xl">
+        <span className="break-words text-[1.2rem] md:text-[2.5rem] first-letter:text-7xl">
           {slice.primary.subtitle}
         </span>
       </div>
@@ -104,9 +104,9 @@ const About = ({ slice }: AboutProps): JSX.Element => {
           </div>
           <div className="w-[50%] p-1 md:p-2">
             <PrismicNextImage
-              field={slice.primary.image9}
-              width={slice.primary.image9.dimensions?.width}
-              height={slice.primary.image9.dimensions?.height}
+              field={slice.primary.image6}
+              width={slice.primary.image6.dimensions?.width}
+              height={slice.primary.image6.dimensions?.height}
               placeholder="blur"
               blurDataURL={getBlurSvg}
             />
@@ -145,9 +145,9 @@ const About = ({ slice }: AboutProps): JSX.Element => {
 
           <div className="w-full p-1 md:p-2">
             <PrismicNextImage
-              field={slice.primary.image6}
-              width={slice.primary.image6.dimensions?.width}
-              height={slice.primary.image6.dimensions?.height}
+              field={slice.primary.image9}
+              width={slice.primary.image9.dimensions?.width}
+              height={slice.primary.image9.dimensions?.height}
               placeholder="blur"
               blurDataURL={getBlurSvg}
             />

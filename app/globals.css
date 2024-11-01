@@ -35,7 +35,7 @@ html {
   &:after {
     content: "";
     display: block;
-    background: white;
+    background: #1B1B1B;
     width: calc(100vw + 2 * var(--v-offset));
     height: var(--curve-height);
     position: absolute;
