@@ -17,6 +17,7 @@ export default {
       fontFamily: {
         amble: ["var(--font-amble)"],
         questa: ["var(--font-questa)"],
+        lavishly: ["var(--font-lavishly)"],
       },
       colors: {
         black: "#1B1B1B",

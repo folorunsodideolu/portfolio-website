@@ -15,10 +15,10 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="px-4 lg:px-24 py-32"
+      className="px-4 lg:px-24 pt-16 md:pt-32 pb-32"
       id="about"
     >
-      <div className="flex justify-center items-center text-[1rem] md:text-[1.5rem] font-bold pb-4 font-amble">
+      <div className="flex justify-center items-center text-[1rem] md:text-[1.5rem] font-bold pb-4 font-amble capitalize">
         {slice.primary.title}
       </div>
       <div className="text-justify md:text-center pb-8">

@@ -8,18 +8,21 @@ export function Footer() {
 
   return (
     <footer
-      className="relative px-3 py-4  text-white bg-[#0e0e0e] overflow-x-hidden"
+      className="relative px-3 py-4 text-white bg-[#0e0e0e] overflow-x-hidden"
       id="contact"
     >
-      <div className="mb-[10vh]">
-        <div className="mx-1 uppercase font-semibold py-10 text-4xl md:text-[11.5vmax] my-1 leading-none">
-          <span>
-            Folorunso <br /> Dideolu
-          </span>
+      <div className="text-center mb-[10vh]">
+        <div className="mx-1 uppercase font-semibold py-10 text-5xl md:text-[11.5vmax] my-1 leading-none">
+          <p className="font-lavishly capitalize mr-48">
+            Folorunso
+          </p>
+          <p className="font-lavishly capitalize mr-4">
+            Dideolu
+          </p>
         </div>
       </div>
-      <div className="flex flex-row items-start lg:items-center justify-between uppercase">
-        <div className="hidden lg:block capitalize">follow us</div>
+      <div className="flex flex-row items-center justify-between">
+        <div className="hidden lg:block uppercase text-3xl">Socials</div>
         <div className="text-4xl underline">
           <PrismicNextLink href="mailto:folorunsodideolu@gmail.com">
             <Icons.Mail className="w-12" />
@@ -58,7 +61,7 @@ export function Footer() {
         </PrismicNextLink>
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:mt-20 items-start lg:items-end justify-between">
+      <div className="flex flex-row mt-8 md:mt-16 items-start lg:items-end justify-between">
         <div className="my-5 lg:my-0">copyright {year} - fd</div>
         <div>
           a pastel <br /> artist in Nigeria

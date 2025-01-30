@@ -20,12 +20,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-32 lg:pt-40"
-      id="home"
+      className="pb-0 pt-32 md:pt-32 md:pb-32 lg:pt-40"
+      id="intro"
     >
       <div className="px-4 lg:px-24">
         <div className="mx-auto w-full text-center py-4 line">
-          <span className="font-amble uppercase text-[1.5rem] font-extrabold md:text-[3rem] lg:text-[5rem] lg:leading-[7.25rem] pt-2">
+          <span className="font-amble uppercase text-[1.5rem] font-extrabold md:text-[3rem] lg:text-[4rem] lg:leading-[7.25rem] pt-2">
             {slice.primary.text_one}
             <span>
               {` ${slice.primary.text_two} `}

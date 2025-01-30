@@ -17,7 +17,7 @@ export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems: NavItem[] = [
-    { label: "Home", path: "home" },
+    { label: "Intro", path: "intro" },
     { label: "About", path: "about" },
     { label: "Projects", path: "projects" },
     { label: "Artist", path: "artist" },
@@ -33,7 +33,7 @@ export function Nav() {
       <div className="w-full flex flex-wrap items-center justify-between px-4 sm:px-8 xl:px-[6.25rem] py-4">
         {/* <!-- Logo  --> */}
         <Link href={"/"}>
-          <h1 className="font-amble font-extrabold uppercase text-[1.25rem]">
+          <h1 className="font-lavishly font-extrabold capitalize text-[2.25rem]">
             Folorunso Dideolu
           </h1>
         </Link>
@@ -97,9 +97,9 @@ export function Nav() {
                       cursor-pointer 
                       hover:font-bold 
                       hover:text-black  
-                      hover:px-4
-                      hover:py-1
+                      hover:px-3
                       hover:bg-white
+                      hover:items-center
                       hover:rounded-[20px]
                       focus:font-bold 
                       focus:text-black

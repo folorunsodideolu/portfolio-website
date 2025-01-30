@@ -1,8 +1,15 @@
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { Lavishly_Yours } from "next/font/google";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const lavishly = Lavishly_Yours({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-lavishly",
+});
 
 const amble = localFont({
   src: [
@@ -37,7 +44,6 @@ export const metadata: Metadata = {
   description: "Pastel artist in Nigeria",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`font-questa ${questa.variable} font-amble ${amble.variable}`}
+      className={`font-questa ${questa.variable} font-amble ${amble.variable} font-lavishly ${lavishly.variable}`}
     >
       <body
         className="min-h-screen overflow-x-hidden m-0 p-0 flex flex-col bg-black text-white"
