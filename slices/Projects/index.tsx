@@ -51,9 +51,9 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
                   />
 
                   <div className="works_grid_item_info">
-                    <h3 className="text-[2rem] md:text-[3.5rem] xl:text-[4.8rem] uppercase">
+                    <h2 className="text-[2rem] md:text-[3.5rem] xl:text-[4.8rem] uppercase">
                       {item.title}
-                    </h3>
+                    </h2>
 
                     <span className="text-[1.5rem] xl:text-[2.4rem] capitalize text-justify">
                       {item.description}

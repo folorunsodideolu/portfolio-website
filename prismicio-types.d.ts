@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | CallToActionSlice
   | CarouselSlice
   | ArtistSlice
   | ProjectsSlice
@@ -162,6 +163,91 @@ type ArtistSliceVariation = ArtistSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ArtistSlice = prismic.SharedSlice<"artist", ArtistSliceVariation>;
+
+/**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * image field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * title field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * content field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+
+  /**
+   * button text field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * button link field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
+>;
 
 /**
  * Item in *Carousel → Default → Primary → images*
@@ -449,6 +535,10 @@ declare module "@prismicio/client" {
       ArtistSliceDefaultPrimary,
       ArtistSliceVariation,
       ArtistSliceDefault,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       CarouselSlice,
       CarouselSliceDefaultPrimaryImagesItem,
       CarouselSliceDefaultPrimary,

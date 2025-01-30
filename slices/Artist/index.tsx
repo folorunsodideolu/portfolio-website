@@ -22,7 +22,7 @@ const Artist = ({ slice }: ArtistProps): JSX.Element => {
       id="artist"
     >
       <div className="text-center mx-auto pt-4 items-baseline gap-4 lg:gap-x-[3.2rem] w-[70vw] border-b-2 border-white border-solid mb-16">
-        <h1 className="text-[2rem] md:text-[5.5rem] xl:text-[7rem]  uppercase font-amble">
+        <h1 className="text-[2rem] md:text-[4rem] lg:text-[5.5rem] xl:text-[7rem]  uppercase font-amble">
           {slice.primary.section_title}
         </h1>
       </div>

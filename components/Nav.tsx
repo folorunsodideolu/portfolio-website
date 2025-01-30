@@ -29,18 +29,22 @@ export function Nav() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-transparent fixed backdrop-blur-xl z-[9999] w-full top-0">
-      <div className="w-full flex flex-wrap items-center justify-between px-4 sm:px-8 xl:px-[6.25rem] py-4">
-        {/* <!-- Logo  --> */}
-        <Link href={"/"}>
-          <h1 className="font-lavishly font-extrabold capitalize text-[2.25rem]">
-            Folorunso Dideolu
-          </h1>
-        </Link>
-        <button
-          type="button"
-          onClick={handleClick}
-          className="
+    <header>
+      <nav
+        aria-label="Main"
+        className="bg-transparent fixed backdrop-blur-xl z-[9999] w-full top-0"
+      >
+        <div className="w-full flex flex-wrap items-center justify-between px-4 sm:px-8 xl:px-[6.25rem] py-4">
+          {/* <!-- Logo  --> */}
+          <Link href={"/"}>
+            <h1 className="font-lavishly font-extrabold capitalize text-[2.25rem]">
+              Folorunso Dideolu
+            </h1>
+          </Link>
+          <button
+            type="button"
+            onClick={handleClick}
+            className="
             inline-flex 
             w-[46px] 
             h-[46px] 
@@ -52,16 +56,16 @@ export function Nav() {
             justify-center 
             lg:hidden 
             focus:outline-none "
-        >
-          {isMenuOpen ? (
-            <Image src={close} className="w-9 object-contain" alt="icon" />
-          ) : (
-            <Image src={menu} className="w-9 object-contain" alt="icon" />
-          )}
-        </button>
-        <div className="hidden w-full lg:block md:w-auto justify-end">
-          <div
-            className="
+          >
+            {isMenuOpen ? (
+              <Image src={close} className="w-9 object-contain" alt="icon" />
+            ) : (
+              <Image src={menu} className="w-9 object-contain" alt="icon" />
+            )}
+          </button>
+          <div className="hidden w-full lg:block md:w-auto justify-end">
+            <div
+              className="
               font-medium 
               text-[#1B1B1B] 
               flex 
@@ -76,17 +80,17 @@ export function Nav() {
               md:space-x-8 
               md:mt-0 
               md:border-0"
-          >
-            {/* Nav Desktop */}
-            {React.Children.toArray(
-              navItems.map(({ label, path }, index) => (
-                <Links
-                  key={index}
-                  activeClass="active"
-                  smooth
-                  spy
-                  to={path}
-                  className="
+            >
+              {/* Nav Desktop */}
+              {React.Children.toArray(
+                navItems.map(({ label, path }, index) => (
+                  <Links
+                    key={index}
+                    activeClass="active"
+                    smooth
+                    spy
+                    to={path}
+                    className="
                       h-[40px]
                       w-[100px]
                       lg:inline-flex 
@@ -106,32 +110,32 @@ export function Nav() {
                       transition-all duration-500
                       ease-in-out
                       "
-                >
-                  {label}
-                </Links>
-              ))
-            )}
+                  >
+                    {label}
+                  </Links>
+                ))
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="lg:hidden absolute left-0 top-0 my-auto h-screen w-[100%] bg-[#011341] -z-[1] overflow-hidden">
-          <div className="px-[0.75rem] py-[10rem] text-center space-y-16">
-            {React.Children.toArray(
-              navItems.map(({ label, path }, index) => (
-                <Links
-                  key={index}
-                  activeClass="active"
-                  smooth
-                  spy
-                  to={path}
-                  className="block cursor-pointer"
-                  onClick={handleClick}
-                >
-                  <span
-                    className="
+        {/* Mobile Nav */}
+        {isMenuOpen && (
+          <div className="lg:hidden absolute left-0 top-0 my-auto h-screen w-[100%] bg-[#011341] -z-[1] overflow-hidden">
+            <div className="px-[0.75rem] py-[10rem] text-center space-y-16">
+              {React.Children.toArray(
+                navItems.map(({ label, path }, index) => (
+                  <Links
+                    key={index}
+                    activeClass="active"
+                    smooth
+                    spy
+                    to={path}
+                    className="block cursor-pointer"
+                    onClick={handleClick}
+                  >
+                    <span
+                      className="
                     text-[#C6C6C6] 
                     hover:decoration-white 
                     hover:decoration-2 
@@ -145,15 +149,16 @@ export function Nav() {
                     font-semibold 
                     text-[20px] 
                     "
-                  >
-                    {label}
-                  </span>
-                </Links>
-              ))
-            )}
+                    >
+                      {label}
+                    </span>
+                  </Links>
+                ))
+              )}
+            </div>
           </div>
-        </div>
-      )}
-    </nav>
+        )}
+      </nav>
+    </header>
   );
 }

@@ -45,6 +45,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               height={image.image.dimensions?.height}
               placeholder="blur"
               blurDataURL={getBlurSvg}
+              priority
             />
           ))
         )}
