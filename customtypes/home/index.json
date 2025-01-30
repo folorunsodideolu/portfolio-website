@@ -11,13 +11,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "carousel": {
+              "type": "SharedSlice"
+            },
             "artist": {
               "type": "SharedSlice"
             },
             "projects": {
-              "type": "SharedSlice"
-            },
-            "about": {
               "type": "SharedSlice"
             },
             "hero": {

@@ -49,16 +49,13 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
                     placeholder="blur"
                     blurDataURL={getBlurSvg}
                   />
-                  <div className="works_grid_item_title">
-                    <h3 className="text-[2rem] lg:text-[4.8rem] uppercase">
+
+                  <div className="works_grid_item_info">
+                    <h3 className="text-[2rem] md:text-[3.5rem] xl:text-[4.8rem] uppercase">
                       {item.title}
                     </h3>
-                  </div>
-                  <div className="works_grid_item_info">
-                    {/* <h2 className="text-[2rem] lg:text-[9rem] uppercase font-amble">
-                      {`( ${index + 1} )`}
-                    </h2> */}
-                    <span className="text-[1.5rem] lg:text-[2.4rem] capitalize text-justify">
+
+                    <span className="text-[1.5rem] xl:text-[2.4rem] capitalize text-justify">
                       {item.description}
                     </span>
                   </div>

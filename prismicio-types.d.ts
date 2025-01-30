@@ -5,9 +5,9 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | CarouselSlice
   | ArtistSlice
   | ProjectsSlice
-  | AboutSlice
   | HeroSlice;
 
 /**
@@ -70,148 +70,6 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
-
-/**
- * Primary content in *About → Default → Primary*
- */
-export interface AboutSliceDefaultPrimary {
-  /**
-   * heading field in *About → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  heading: prismic.KeyTextField;
-
-  /**
-   * subtitle field in *About → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subtitle: prismic.KeyTextField;
-
-  /**
-   * image1 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image1
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image1: prismic.ImageField<never>;
-
-  /**
-   * image2 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image2
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image2: prismic.ImageField<never>;
-
-  /**
-   * image3 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image3
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image3: prismic.ImageField<never>;
-
-  /**
-   * image4 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image4
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image4: prismic.ImageField<never>;
-
-  /**
-   * image5 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image5
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image5: prismic.ImageField<never>;
-
-  /**
-   * image6 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image6
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image6: prismic.ImageField<never>;
-
-  /**
-   * image7 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image7
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image7: prismic.ImageField<never>;
-
-  /**
-   * image8 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image8
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image8: prismic.ImageField<never>;
-
-  /**
-   * image9 field in *About → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about.default.primary.image9
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image9: prismic.ImageField<never>;
-}
-
-/**
- * Default variation for About Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AboutSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<AboutSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *About*
- */
-type AboutSliceVariation = AboutSliceDefault;
-
-/**
- * About Shared Slice
- *
- * - **API ID**: `about`
- * - **Description**: About
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
  * Primary content in *Artist → Default → Primary*
@@ -304,6 +162,86 @@ type ArtistSliceVariation = ArtistSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ArtistSlice = prismic.SharedSlice<"artist", ArtistSliceVariation>;
+
+/**
+ * Item in *Carousel → Default → Primary → images*
+ */
+export interface CarouselSliceDefaultPrimaryImagesItem {
+  /**
+   * image field in *Carousel → Default → Primary → images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Carousel → Default → Primary*
+ */
+export interface CarouselSliceDefaultPrimary {
+  /**
+   * title field in *Carousel → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * content field in *Carousel → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+
+  /**
+   * images field in *Carousel → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel.default.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<Simplify<CarouselSliceDefaultPrimaryImagesItem>>;
+}
+
+/**
+ * Default variation for Carousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CarouselSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Carousel*
+ */
+type CarouselSliceVariation = CarouselSliceDefault;
+
+/**
+ * Carousel Shared Slice
+ *
+ * - **API ID**: `carousel`
+ * - **Description**: Carousel
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CarouselSlice = prismic.SharedSlice<
+  "carousel",
+  CarouselSliceVariation
+>;
 
 /**
  * Item in *Hero → Default → Primary → images*
@@ -507,14 +445,15 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
-      AboutSlice,
-      AboutSliceDefaultPrimary,
-      AboutSliceVariation,
-      AboutSliceDefault,
       ArtistSlice,
       ArtistSliceDefaultPrimary,
       ArtistSliceVariation,
       ArtistSliceDefault,
+      CarouselSlice,
+      CarouselSliceDefaultPrimaryImagesItem,
+      CarouselSliceDefaultPrimary,
+      CarouselSliceVariation,
+      CarouselSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryImagesItem,
       HeroSliceDefaultPrimary,

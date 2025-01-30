@@ -21,11 +21,13 @@ const Artist = ({ slice }: ArtistProps): JSX.Element => {
       className="px-4 lg:px-24 py-32"
       id="artist"
     >
-      <h1 className="pb-4 text-3xl uppercase font-extrabold">
-        {slice.primary.section_title}
-      </h1>
-      <div className="grid lg:grid-cols-2 gap-x-16 gap-y-4">
-        <div className="lg:order-last">
+      <div className="text-center pt-4 items-baseline gap-4 lg:gap-x-[3.2rem] w-full border-b-2 border-white border-solid mb-16">
+        <h1 className="text-[2rem] lg:text-[7rem]  uppercase font-amble">
+          {slice.primary.section_title}
+        </h1>
+      </div>
+      <div className="grid xl:grid-cols-2 gap-x-16 gap-y-4">
+        <div className="xl:order-last">
           <PrismicNextImage
             field={slice.primary.artistimage}
             width={slice.primary.artistimage.dimensions?.width}
