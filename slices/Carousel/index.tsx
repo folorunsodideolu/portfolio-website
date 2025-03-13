@@ -1,4 +1,4 @@
-import { ImageCarousel } from "@/components/ImageCarousel";
+import { ImageSwiper } from "@/components/ImageSwiper";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -28,7 +28,7 @@ const Carousel = ({ slice }: CarouselProps): JSX.Element => {
       </div>
 
       <div className="relative overflow-hidden w-full h-full py-20">
-        <ImageCarousel slides={slice.primary.images} />
+        <ImageSwiper data={slice.primary.images} />
       </div>
     </section>
   );

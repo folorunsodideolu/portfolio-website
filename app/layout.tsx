@@ -3,6 +3,9 @@ import { Nav } from "@/components/Nav";
 import { Lavishly_Yours } from "next/font/google";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./globals.css";
 
 const lavishly = Lavishly_Yours({

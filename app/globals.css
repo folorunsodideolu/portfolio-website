@@ -6,7 +6,6 @@ html {
   scroll-behavior: smooth;
 }
 
- 
 .gradient {
   width: 100%;
   height: 100%;
@@ -35,7 +34,7 @@ html {
   &:after {
     content: "";
     display: block;
-    background: #1B1B1B;
+    background: #1b1b1b;
     width: calc(100vw + 2 * var(--v-offset));
     height: var(--curve-height);
     position: absolute;
@@ -114,4 +113,38 @@ html {
       "grid-title"
       "grid-info";
   }
+}
+
+
+
+.swiper-slide-active {
+  height: 700px !important;
+  transition: width 1s ease-in-out;
+  border: 3px solid #ffffff;
+}
+
+.swiper-slide img {
+  position: absolute;
+  inset: 0;
+  filter: grayscale(90%);
+  object-fit: cover;
+  height: inherit;
+}
+
+.swiper-slide-active img {
+  filter: grayscale(0%);
+}
+
+.swiper-pagination-bullet {
+  width: 16px !important;
+  height: 16px !important;
+  background-color: #ffffff !important;
+  border-radius: 50% !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 32px !important;
+  border-radius: 14px !important;
+  background-color: #3138b7 !important;
+  transition: all 0.8s ease-in-out !important;
 }
